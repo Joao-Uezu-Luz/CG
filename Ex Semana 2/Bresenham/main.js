@@ -245,7 +245,7 @@ function init() {
 // Iniciar
 init();
 
-console.log(' Programa Bresenham iniciado!');
-console.log(' Clique para definir os pontos da linha');
-console.log(' Teclas 0-9 para mudar a cor');
-console.log(' Coordenadas atualizadas em tempo real');
+console.log('🎨 Programa Bresenham iniciado!');
+console.log('📌 Clique para definir os pontos da linha');
+console.log('🎯 Teclas 0-9 para mudar a cor');
+console.log('📊 Coordenadas atualizadas em tempo real');
