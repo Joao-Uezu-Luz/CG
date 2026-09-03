@@ -1,17 +1,9 @@
-// ================================================================
-// BRESENHAM - LINHAS INTERATIVAS (Adaptado)
-// ================================================================
-
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 // Dimensões do canvas
 const WIDTH = canvas.width;
 const HEIGHT = canvas.height;
-
-// ================================================================
-// 1. SISTEMA DE CORES (Teclas 0-9)
-// ================================================================
 
 const colors = {
     '0': { name: 'Azul', r: 0, g: 0.4, b: 1.0 },
@@ -30,17 +22,9 @@ const colors = {
 let currentColor = colors['0'];
 let currentKey = '0';
 
-// ================================================================
-// 2. ESTADO DA LINHA
-// ================================================================
-
 let points = [];
 let linePoints = [];
 let isDrawing = false;
-
-// ================================================================
-// 3. ALGORITMO DE BRESENHAM
-// ================================================================
 
 function bresenhamLine(x0, y0, x1, y1) {
     const points = [];
@@ -102,10 +86,6 @@ function bresenhamLine(x0, y0, x1, y1) {
     return points;
 }
 
-// ================================================================
-// 4. FUNÇÃO PARA DESENHAR A LINHA
-// ================================================================
-
 function drawLine(points, color) {
     if (!points || points.length < 2) return;
     
@@ -134,18 +114,10 @@ function drawLine(points, color) {
     ctx.putImageData(imageData, 0, 0);
 }
 
-// ================================================================
-// 5. FUNÇÃO PARA LIMPAR A TELA
-// ================================================================
-
 function clearCanvas() {
     ctx.fillStyle = '#0a0a0a';
     ctx.fillRect(0, 0, WIDTH, HEIGHT);
 }
-
-// ================================================================
-// 6. FUNÇÃO PARA REDESENHAR TUDO
-// ================================================================
 
 function redraw() {
     clearCanvas();
@@ -154,10 +126,6 @@ function redraw() {
         drawLine(linePoints, currentColor);
     }
 }
-
-// ================================================================
-// 7. FUNÇÃO PARA ATUALIZAR A LINHA
-// ================================================================
 
 function updateLine() {
     if (points.length === 2) {
@@ -175,10 +143,6 @@ function updateLine() {
     }
 }
 
-// ================================================================
-// 8. FUNÇÃO PARA ATUALIZAR AS COORDENADAS NA TELA
-// ================================================================
-
 function updateCoordinates() {
     if (points.length === 2) {
         // Coordenadas do canvas (pixels)
@@ -195,10 +159,6 @@ function updateCoordinates() {
             `WebGL: (${webglX0.toFixed(3)}, ${webglY0.toFixed(3)}) → (${webglX1.toFixed(3)}, ${webglY1.toFixed(3)})`;
     }
 }
-
-// ================================================================
-// 9. EVENTOS DO MOUSE
-// ================================================================
 
 canvas.addEventListener('mousedown', function(e) {
     const rect = canvas.getBoundingClientRect();
@@ -246,10 +206,6 @@ canvas.addEventListener('mousedown', function(e) {
     }
 });
 
-// ================================================================
-// 10. EVENTOS DO TECLADO (MUDAR COR)
-// ================================================================
-
 document.addEventListener('keydown', function(e) {
     const key = e.key;
     
@@ -267,10 +223,6 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
-
-// ================================================================
-// 11. INICIALIZAÇÃO
-// ================================================================
 
 function init() {
     // Limpar tela
@@ -293,7 +245,7 @@ function init() {
 // Iniciar
 init();
 
-console.log('🎨 Programa Bresenham iniciado!');
-console.log('📌 Clique para definir os pontos da linha');
-console.log('🎯 Teclas 0-9 para mudar a cor');
-console.log('📊 Coordenadas atualizadas em tempo real');
+console.log(' Programa Bresenham iniciado!');
+console.log(' Clique para definir os pontos da linha');
+console.log(' Teclas 0-9 para mudar a cor');
+console.log(' Coordenadas atualizadas em tempo real');
