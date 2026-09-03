@@ -129,7 +129,7 @@ function redraw() {
 
 function updateLine() {
     if (points.length === 2) {
-        // Gerar pontos da linha usando Bresenham
+        // Gerar pontos da linha usando 
         linePoints = bresenhamLine(
             points[0].x, points[0].y,
             points[1].x, points[1].y
