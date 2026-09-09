@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Pong - Completo</title>
+    <title>Pong</title>
     <style>
         body {
             margin: 0;
@@ -13,18 +13,15 @@
             background: #1a1a1a;
             font-family: 'Courier New', monospace;
         }
-        
         #gameContainer {
             position: relative;
             display: inline-block;
         }
-        
         canvas {
             display: block;
             border: 2px solid #333;
             background: #111;
         }
-        
         #placar {
             position: absolute;
             top: 20px;
@@ -37,7 +34,6 @@
             pointer-events: none;
             user-select: none;
         }
-        
         #mensagem {
             position: absolute;
             top: 50%;
@@ -50,13 +46,11 @@
             user-select: none;
             text-shadow: 0 0 20px rgba(255,255,255,0.5);
         }
-        
         #mensagem .sub {
             font-size: 18px;
             opacity: 0.7;
             margin-top: 15px;
         }
-        
         #instrucoes {
             position: absolute;
             bottom: 20px;
@@ -80,7 +74,6 @@
         </div>
         <div id="instrucoes">Jogador 1: W/S | Jogador 2: ↑/↓</div>
     </div>
-
     <script src="m3.js"></script>
     <script src="main.js"></script>
 </body>
